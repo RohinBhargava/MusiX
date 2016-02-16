@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15A278b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bzr-aE-iiG">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--Settings-->
+        <scene sceneID="eZw-Tx-qHf">
+            <objects>
+                <tableViewController title="Settings" id="ysD-IE-3AW" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="hOg-3Y-v0h">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Connect" id="lgF-Ae-Ynd">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lgF-Ae-Ynd" id="dbo-b7-Zqo" userLabel="Connect">
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" trigger="accessoryAction" id="FQW-cv-4wQ"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="ysD-IE-3AW" id="4Cq-TM-2Q9"/>
+                            <outlet property="delegate" destination="ysD-IE-3AW" id="fVX-fn-Ps1"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Item" id="wtH-JD-Plv"/>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="c4A-lV-n3e"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R2h-GU-SA0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1150" y="65"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="zwt-Lh-JKL">
+            <objects>
+                <navigationController id="ihI-W9-PW9" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="rIi-KS-qhI"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6MS-Se-p0N">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ysD-IE-3AW" kind="relationship" relationship="rootViewController" id="oGg-cz-FNc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wka-2O-bU1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="496" y="65"/>
+        </scene>
+        <!--Connect-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController title="Connect" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MRZ-T1-1RZ">
+                                <rect key="frame" x="236" y="311" width="128" height="128"/>
+                                <state key="normal" image="SoundCloud Login Button"/>
+                                <connections>
+                                    <action selector="authenticateSoundCloud:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8z5-yD-FjX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="center" semanticContentAttribute="spatial" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b1b-P8-S0g">
+                                <rect key="frame" x="236" y="161" width="128" height="128"/>
+                                <size key="titleShadowOffset" width="2.2250738585072014e-308" height="0.0"/>
+                                <state key="normal" image="Spotify Login Button"/>
+                                <connections>
+                                    <action selector="authenticateSpotify:" destination="BYZ-38-t0r" eventType="touchUpInside" id="thV-ia-9Bl"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Connect" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOy-eB-7Ba">
+                                <rect key="frame" x="217" y="84" width="167" height="55"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="b1b-P8-S0g" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JOh-ae-1V8"/>
+                            <constraint firstItem="b1b-P8-S0g" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-75" id="eyc-G7-lSU"/>
+                            <constraint firstItem="MRZ-T1-1RZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="m4p-f8-XrY"/>
+                            <constraint firstItem="eOy-eB-7Ba" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uyH-gy-t84"/>
+                            <constraint firstItem="MRZ-T1-1RZ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="75" id="vQe-NK-d7Z"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="RBU-So-efN"/>
+                    <navigationItem key="navigationItem" id="LOT-fM-CtO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2107" y="65"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="D88-gX-lTm">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="bzr-aE-iiG" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="qZb-eL-fzX">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="ihI-W9-PW9" kind="relationship" relationship="viewControllers" id="dsB-Yw-00e"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WBi-Xp-bBB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-213" y="65"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="SoundCloud Login Button" width="128" height="128"/>
+        <image name="Spotify Login Button" width="128" height="128"/>
+    </resources>
+</document>
